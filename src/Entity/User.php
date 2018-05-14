@@ -167,6 +167,7 @@ class User implements UserInterface
     public function setRole($role)
     {
         $this->role = $role;
+
         return $this;
     }
 
@@ -285,6 +286,8 @@ class User implements UserInterface
     public function setCreatedOn(DateTime $createdOn)
     {
         $this->createdOn = $createdOn;
+
+        return $this;
     }
 
     /**
@@ -301,6 +304,7 @@ class User implements UserInterface
     public function setUpdatedOn(DateTime $updatedOn)
     {
         $this->updatedOn = $updatedOn;
+
         return $this;
     }
 
@@ -360,7 +364,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set time field
+     * Set or update time fields
      *
      * @ORM\PrePersist
      * @ORM\PreUpdate
@@ -370,7 +374,7 @@ class User implements UserInterface
     {
         $datetime = new \DateTime('now');
 
-        if ($this->getCreatedOn() == NULL) {
+        if (NULL === $this->getCreatedOn()) {
             $this->setCreatedOn($datetime);
             return;
         }
