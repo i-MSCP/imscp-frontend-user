@@ -10,7 +10,7 @@ use DateTime;
  */
 interface UserInterface
 {
-    const
+    public const
         STATUS_TOADD = 1, // User being added
         STATUS_TOCHANGE = 2, // User being updated
         STATUS_TOCHANGEPWD = 3, // User password being updated
@@ -23,7 +23,7 @@ interface UserInterface
     /**
      * Returns user unique identifier
      *
-     * @return integer
+     * @return int
      */
     public function getId();
 

@@ -33,7 +33,6 @@ class EnumRoleType extends Type
     const ROLE_ADMIN = 'admin';
     const ROLE_RESELLER = 'reseller';
     const ROLE_CLIENT = 'client';
-    const ROLE_WHATEVER = 'whatever';
 
     /**
      * @inheritdoc
@@ -56,7 +55,7 @@ class EnumRoleType extends Type
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        if (!in_array($value, [static::ROLE_ADMIN, static::ROLE_RESELLER, static::ROLE_CLIENT, static::ROLE_WHATEVER])) {
+        if (!in_array($value, [static::ROLE_ADMIN, static::ROLE_RESELLER, static::ROLE_CLIENT])) {
             throw new \InvalidArgumentException('Invalid role');
         }
 
