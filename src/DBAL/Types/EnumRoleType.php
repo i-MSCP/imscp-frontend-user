@@ -39,7 +39,7 @@ class EnumRoleType extends Type
      */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
     {
-        return "ENUM('admin', 'reseller', 'client', 'whatever')";
+        return "ENUM('admin', 'reseller', 'client')";
     }
 
     /**
